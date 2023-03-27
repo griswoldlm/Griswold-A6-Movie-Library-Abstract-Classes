@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation
 {
-    public abstract class VideoType : MediaType
+    public  class VideoType : MediaType
     {
         public string Format { get; set; }
         public int Length { get; set; }

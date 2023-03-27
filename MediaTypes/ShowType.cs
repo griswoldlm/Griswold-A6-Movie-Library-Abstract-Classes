@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation
 {
-    public abstract class ShowType : MediaType
+    public class ShowType : MediaType
     {
         public int Season { get; set; }
         public int Episode { get; set; }

@@ -4,8 +4,10 @@ using System.Reflection.Metadata;
 
 namespace Griswold_A6_Movie_Library_Abstract_Classes
 {
+    
     internal class Program
     {
+        
         static void Main(string[] args)
         {
 
@@ -167,23 +169,25 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes
                     // Display Movies
                     else if (choice == "2")
                     {
-                        MediaType movieType = new MediaType();
+                        MovieType movieType = new MovieType();
                         movieType.Display();
                     }
+                    // Display Shows
                     else if (choice == "3")
                     {
-                        MediaType showType = new MediaType();
+                        ShowType showType = new ShowType();
                         showType.Display();
                     }
+                    // Display videos
                     else if (choice == "4")
                     {
-                        MediaType videoType = new MediaType();
+                        VideoType videoType = new VideoType();
                         videoType.Display();
                     }
-                    sr.Close(); // Always close!!!
 
-                } while (choice == "1" || choice == "4");
+                    sr.Close(); // Always close!!!
+                } while (choice == "1" || choice == "2" || choice == "3" || choice == "4");
             }
         }
-    }
+    } 
 }
