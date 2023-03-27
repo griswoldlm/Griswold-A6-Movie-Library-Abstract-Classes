@@ -13,9 +13,9 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation
         public int Length { get; set; }
         public int[] Regions { get; set; }
 
-        public string Display()
+        public override void Display()
         {
-            return $"ID: {Id}, Title: {Title}, Format: {Format}, Length: {Length}, Region(s): {Regions}";
+            Console.WriteLine($"ID: {Id}, Title: {Title}, Format: {Format}, Length: {Length}, Region(s): {Regions}");
 
         }
     }

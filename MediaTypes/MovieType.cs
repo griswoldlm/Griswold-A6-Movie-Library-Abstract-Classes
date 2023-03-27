@@ -12,9 +12,9 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation
     {
         string[] Genres { get; set; }
 
-        public string Display()
+        public override void Display()
         {
-            return $"ID: {Id}, Title: {Title}, Genre(s): {Genres}";
+            Console.WriteLine($"ID: {Id}, Title: {Title}, Genre(s): {Genres}");
 
         }
     }

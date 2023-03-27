@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata;
+﻿using Griswold_A6_Movie_Library_Abstract_Classes.MediaTypes;
+using Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation;
+using System.Reflection.Metadata;
 
 namespace Griswold_A6_Movie_Library_Abstract_Classes
 {
@@ -163,17 +165,22 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes
                     // Display Movies
                     else if (choice == "2")
                     {
+                        
+
+
                         StreamReader sr1 = new StreamReader(file);
 
                         // Skip header
                         sr1.ReadLine();
 
                         // Read movie.csv file
+                        
                         while (!sr1.EndOfStream)
                         {
-                            var line = sr1.ReadLine();
-                            string[] arr = line.Split(',');
-                            Console.WriteLine($"ID: {arr[0]}, Title: {arr[1]}, Genre(s): {arr[2]}");
+                            MovieType.Display();
+                            //var line = sr1.ReadLine();
+                            //string[] arr = line.Split(',');
+                            //Console.WriteLine($"ID: {arr[0]}, Title: {arr[1]}, Genre(s): {arr[2]}");
                         }
 
                     }

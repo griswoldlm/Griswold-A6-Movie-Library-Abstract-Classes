@@ -13,9 +13,9 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation
         public int Episode { get; set; }
         public string[] Writers { get; set; }
 
-        public string Display()
+        public override void Display()
         {
-            return $"ID: {Id}, Title: {Title}, Season: {Season}, Episode: {Episode}, Writer(s): {Writers}";
+            Console.WriteLine($"ID: {Id}, Title: {Title}, Season: {Season}, Episode: {Episode}, Writer(s): {Writers}");
 
         }
     }
