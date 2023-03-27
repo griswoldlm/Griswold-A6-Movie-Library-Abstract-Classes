@@ -28,7 +28,7 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation
                 string[] arr = line.Split(',');
                 Console.WriteLine($"ID: {arr[0]}, Title: {arr[1]}, Season: {arr[2]}, Episode: {arr[3]}, Writer(s): {arr[4]}");
             }
-            //Console.WriteLine($"ID: {Id}, Title: {Title}, Season: {Season}, Episode: {Episode}, Writer(s): {Writers}"); showId,title,season,episode,writer
+            //Console.WriteLine($"ID: {Id}, Title: {Title}, Season: {Season}, Episode: {Episode}, Writer(s): {Writers}");
         }
     }
 }
