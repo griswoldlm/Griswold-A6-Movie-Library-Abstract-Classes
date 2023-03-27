@@ -30,7 +30,9 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes
                     // Choices for user to choose
                     Console.WriteLine("1. Add Movie(s)");
                     Console.WriteLine("2. Display Movies");
-                    Console.WriteLine("3. Exit");
+                    Console.WriteLine("3. Display Shows");
+                    Console.WriteLine("4. Display Videos");
+                    Console.WriteLine("Press Enter To Exit");
 
                     // Receive user input
                     choice = Console.ReadLine();
@@ -165,28 +167,22 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes
                     // Display Movies
                     else if (choice == "2")
                     {
-                        
-
-
-                        StreamReader sr1 = new StreamReader(file);
-
-                        // Skip header
-                        sr1.ReadLine();
-
-                        // Read movie.csv file
-                        
-                        while (!sr1.EndOfStream)
-                        {
-                            MovieType.Display();
-                            //var line = sr1.ReadLine();
-                            //string[] arr = line.Split(',');
-                            //Console.WriteLine($"ID: {arr[0]}, Title: {arr[1]}, Genre(s): {arr[2]}");
-                        }
-
+                        MediaType movieType = new MediaType();
+                        movieType.Display();
+                    }
+                    else if (choice == "3")
+                    {
+                        MediaType showType = new MediaType();
+                        showType.Display();
+                    }
+                    else if (choice == "4")
+                    {
+                        MediaType videoType = new MediaType();
+                        videoType.Display();
                     }
                     sr.Close(); // Always close!!!
 
-                } while (choice == "1" || choice == "2");
+                } while (choice == "1" || choice == "4");
             }
         }
     }

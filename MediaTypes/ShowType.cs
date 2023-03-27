@@ -15,8 +15,20 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation
 
         public override void Display()
         {
-            Console.WriteLine($"ID: {Id}, Title: {Title}, Season: {Season}, Episode: {Episode}, Writer(s): {Writers}");
+            string file = $"{Environment.CurrentDirectory}/shows.csv";
+            StreamReader sr1 = new StreamReader(file);
 
+            // Skip header
+            sr1.ReadLine();
+
+            // Read movie.csv file
+            while (!sr1.EndOfStream)
+            {
+                var line = sr1.ReadLine();
+                string[] arr = line.Split(',');
+                Console.WriteLine($"ID: {arr[0]}, Title: {arr[1]}, Season: {arr[2]}, Episode: {arr[3]}, Writer(s): {arr[4]}");
+            }
+            //Console.WriteLine($"ID: {Id}, Title: {Title}, Season: {Season}, Episode: {Episode}, Writer(s): {Writers}"); showId,title,season,episode,writer
         }
     }
 }
