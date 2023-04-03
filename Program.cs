@@ -1,5 +1,6 @@
 ﻿using Griswold_A6_Movie_Library_Abstract_Classes.MediaTypes;
 using Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation;
+using Griswold_A6_Movie_Library_Abstract_Classes.MediaActions;
 using System.Reflection.Metadata;
 
 namespace Griswold_A6_Movie_Library_Abstract_Classes
@@ -34,6 +35,7 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes
                     Console.WriteLine("2. Display Movies");
                     Console.WriteLine("3. Display Shows");
                     Console.WriteLine("4. Display Videos");
+                    Console.WriteLine("5. Search all Titles");
                     Console.WriteLine("Press Enter To Exit");
 
                     // Receive user input
@@ -184,9 +186,15 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes
                         VideoType videoType = new VideoType();
                         videoType.Display();
                     }
+                    // Search all titles
+                    else if (choice == "5")
+                    {
+                        SearchMedia searchMedia = new SearchMedia();
+                        searchMedia.SearchAll();
+                    }
 
                     sr.Close(); // Always close!!!
-                } while (choice == "1" || choice == "2" || choice == "3" || choice == "4");
+                } while (choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5");
             }
         }
     } 

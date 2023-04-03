@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace Griswold_A6_Movie_Library_Abstract_Classes.MediaTypes
 {
-    public abstract class MediaType
+    public abstract class AllMedia
     {
-        public UInt64 Id { get; set; }
-        public string Title { get; set; }
-        public abstract void Display();
+        public abstract void SearchAll();
     }
 }
-       
-         
-
