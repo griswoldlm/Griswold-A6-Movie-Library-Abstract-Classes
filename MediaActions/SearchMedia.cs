@@ -35,13 +35,9 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes.MediaActions
             foreach (var mediaType in results)
             {
                 // this is using something called 'reflection'
-                // will put you "movie/show/video" depending on what title was given
+                // will put you "movie/show/video depending on what title was given
                 Console.WriteLine($"Your {mediaType.GetType().Name}: {mediaType.Title}");
             }
-            // ** Why does the search not display the media? Is the results list currently considered empty?
-            // ** Or is it that the MovieType, ShowType and VideoType lists are not in list form
         }
     }
 }
-
-

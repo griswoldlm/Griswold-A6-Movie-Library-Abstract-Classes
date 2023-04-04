@@ -1,9 +1,13 @@
 ﻿using Griswold_A6_Movie_Library_Abstract_Classes.MediaTypes;
 using Griswold_A6_Movie_Library_Abstract_Classes.MovieInformation;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace Griswold_A6_Movie_Library_Abstract_Classes.MediaActions
@@ -17,16 +21,29 @@ namespace Griswold_A6_Movie_Library_Abstract_Classes.MediaActions
         public Context()
         {
             Movies = new List<MovieType>();
-            string file = $"{Environment.CurrentDirectory}/movies.csv";
-            StreamReader sr = new StreamReader(file);
+            var listMovie = File.ReadAllLines($"{Environment.CurrentDirectory}/movies.json");
+            foreach (var item in listMovie)
+            {
+                var movie = JsonConvert.DeserializeObject<MovieType>(item);
+                Movies.Add(movie);
+            }
 
             Shows = new List<ShowType>();
-            string file1 = $"{Environment.CurrentDirectory}/shows.csv";
-            StreamReader sr1 = new StreamReader(file1);
+            var listShow = File.ReadAllLines($"{Environment.CurrentDirectory}/shows.json");
+            foreach (var item in listShow)
+            {
+                var show = JsonConvert.DeserializeObject<ShowType>(item);
+                Shows.Add(show);
+            }
+
 
             Videos = new List<VideoType>();
-            string file2 = $"{Environment.CurrentDirectory}/videos.csv";
-            StreamReader sr2 = new StreamReader(file2);
+            var listVideos = File.ReadAllLines($"{Environment.CurrentDirectory}/videos.json");
+            foreach (var item in listVideos)
+            {
+                var video = JsonConvert.DeserializeObject<VideoType>(item);
+                Videos.Add(video);
+            }
         }
     }
 }
